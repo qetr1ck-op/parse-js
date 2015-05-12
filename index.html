@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>parse.com</title>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+	<!--<script src="bower_components/jquery/dist/jquery.js"></script>-->
+	<!--<script src="bower_components/lodash/lodash.js"></script>-->
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<h1>Chat with Parse REST </h1>
+			<table id="users" class="table table-bordered table-striped">
+				<caption></caption>
+				<thead>
+					<tr>
+						<th>
+							Username
+						</th>
+						<th>
+							Message
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+		<div class="row-fluid">
+			<form name="new-user">
+				<input type="text" name="username"
+				placeholder="Username" />
+				<input type="text" name="message"
+				placeholder="Message" />
+				<a id="send" class="btn btn-primary">SEND</a>
+			</form>
+		</div>
+	</div>
+	<script src="app.js"></script>
+	<script type="text/template" id="tmpl-users">
+		<% for (var i=0; i<results.length; i++) {%>
+			<tr>
+				<td><%= results[i].username %></td>
+				<td><%= results[i].message %></td>
+			</tr>
+		<% } %>
+	</script>
+</html>
